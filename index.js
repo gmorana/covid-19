@@ -7,11 +7,11 @@ const checkAppointment = async() => {
         const browser = await puppeteer.launch({ headless: false });
         const page = await browser.newPage();
         await page.goto(
-            "https://mychart.sleh.com/prd/signupandschedule/embeddedschedule?vt=323&dept=1020250018"
+            "https://uthealth.qualtrics.com/jfe/form/SV_9AkzYKyGfVMP9k2"
         );
 
         const html = await page.content();
-        $("div.errormessage", html).each(function() {
+        $("div.END_OF_SURVEY", html).each(function() {
             results.push($(this).text());
             console.log(results);
         });
